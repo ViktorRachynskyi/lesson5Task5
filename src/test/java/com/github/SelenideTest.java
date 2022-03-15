@@ -10,9 +10,7 @@ public class SelenideTest {
 
     @Test
     void searchJUnit5CodeBlockTest() {
-        open("https://github.com/");
-        $("[name=q]").setValue("selenide").pressEnter();
-        $(".repo-list a").click();
+        open("https://github.com/selenide/selenide");
         $("#wiki-tab").click();
         $(byText("Soft assertions")).click();
         $("#user-content-3-using-junit5-extend-test-class").parent()
