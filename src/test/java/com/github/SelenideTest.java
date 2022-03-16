@@ -12,7 +12,8 @@ public class SelenideTest {
     void searchJUnit5CodeBlockTest() {
         open("https://github.com/selenide/selenide");
         $("#wiki-tab").click();
-        $(byText("Soft assertions")).click();
+        $("#wiki-pages-filter").setValue("SoftAssertion");
+        $("#wiki-pages-box a").click();
         $("#user-content-3-using-junit5-extend-test-class").parent()
                 .shouldHave(text("Using JUnit5 extend test class:"))  // search JUnit5 section
                 .sibling(0).$("div pre").shouldBe(visible); // search visible code block
